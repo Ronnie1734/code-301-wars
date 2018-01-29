@@ -1,19 +1,18 @@
-function insertDash(num) { 
-    
-    var prev='', 
-        newstring='';
-    
-        num = num.toString();
-        
-        for (var i=0; i<num.length; i++){
-            parseInt(num[i])%2 == 0 ? current='even' : current='odd';
-            if (current=='odd' && prev=='odd'){
-                newstring=newstring + '-' + num[i];
-                prev='odd';
-            } else {
-                newstring=newstring + num[i];
-                 prev=current;
-            }
-        }
-    
-      return newstring;
+function isNice(arr){
+    if (arr.length == 0){
+        return false
+    }
+    for (var n =0; n < arr.length; n++){
+    let flag = false;
+    for (let i = 0; i <arr.length; i++) {
+    if (arr[n]== arr[i] + 1 || arr[n]== arr[i] - 1) {
+     flag = true;
+     
+    }
+    }
+    if (!flag){
+        return false
+    }
+}
+        return true
+}   
